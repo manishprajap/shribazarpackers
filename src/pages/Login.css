@@ -1,0 +1,391 @@
+/* ── Root layout ─────────────────────────────── */
+.login-root {
+  min-height: 100vh;
+  background: #FFFBEB;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 2rem;
+  gap: 1rem;
+  position: relative;
+}
+
+/* Subtle dot texture */
+.login-root::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(180, 140, 40, 0.08) 1px, transparent 1px);
+  background-size: 28px 28px;
+  pointer-events: none;
+}
+
+/* ── Brand / Logo ────────────────────────────── */
+.login-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  gap: 10px;
+  z-index: 1;
+}
+
+.login-logo {
+  width: 90px;
+  height: 90px;
+  border-radius: 5%;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid #fde68a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.login-brand-name {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #92400e;
+  letter-spacing: -0.02em;
+}
+
+/* ── Title / Subtitle ────────────────────────── */
+.login-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #78350f;
+  margin: 0 0 4px;
+}
+
+.login-subtitle {
+  font-size: 13px;
+  color: #a16207;
+  margin: 0;
+  text-align: center;
+}
+
+/* ── Card ────────────────────────────────────── */
+.login-card {
+  width: 100%;
+  max-width: 400px;
+  background: #fff;
+  border: 1px solid #fde68a;
+  border-radius: 16px;
+  padding: 1.75rem 1.5rem;
+  box-shadow: 0 4px 24px rgba(180, 140, 40, 0.10);
+  z-index: 1;
+}
+
+/* ── Form ────────────────────────────────────── */
+.login-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+/* Label */
+.form-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #92400e;
+  margin-bottom: 6px;
+  display: block;
+}
+
+/* ── Input wrapper ───────────────────────────── */
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-icon {
+  position: absolute;
+  left: 12px;
+  color: #b45309;
+  pointer-events: none;
+}
+
+.form-input {
+  width: 100%;
+  height: 42px;
+  padding: 0 42px 0 38px;
+  font-size: 14px;
+  background: #fffdf7;
+  border: 1px solid #fde68a;
+  border-radius: 10px;
+  color: #1c1917;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  box-sizing: border-box;
+}
+
+.form-input::placeholder {
+  color: #d4b896;
+}
+
+.form-input:focus {
+  border-color: #d97706;
+  box-shadow: 0 0 0 3px rgba(217, 119, 6, 0.12);
+  background: #fff;
+}
+
+.otp-input {
+  letter-spacing: 6px;
+  font-size: 18px;
+  font-weight: 600;
+  padding-right: 12px;
+}
+
+/* ── Password toggle ─────────────────────────── */
+.toggle-password {
+  position: absolute;
+  right: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #b45309;
+  display: flex;
+  align-items: center;
+}
+
+.toggle-password:hover {
+  color: #78350f;
+}
+
+/* ── Step label ──────────────────────────────── */
+.step-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #d97706;
+  margin-bottom: 14px;
+}
+
+/* ── Back button (OTP step) ──────────────────── */
+.back-btn {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: none;
+  border: none;
+  color: #a16207;
+  font-size: 13px;
+  padding: 0;
+  margin-bottom: 14px;
+  cursor: pointer;
+}
+
+.back-btn:hover {
+  color: #78350f;
+}
+
+/* ── Error banner ────────────────────────────── */
+.error-banner {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #fef2f2;
+  border: 1px solid #fca5a5;
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 13px;
+  color: #dc2626;
+  margin-bottom: 1rem;
+}
+
+/* ── Submit button ───────────────────────────── */
+.submit-btn {
+  width: 100%;
+  height: 42px;
+  background: #d97706;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.submit-btn:hover:not(:disabled) {
+  background: #b45309;
+}
+
+.submit-btn:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+.submit-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* ── Spinner ─────────────────────────────────── */
+.btn-spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255,255,255,0.3);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ── Resend row (OTP step) ───────────────────── */
+.resend-row {
+  text-align: center;
+  margin-top: 16px;
+  font-size: 13px;
+}
+
+.resend-cooldown {
+  color: #a16207;
+}
+
+.resend-btn {
+  background: none;
+  border: none;
+  color: #d97706;
+  font-weight: 600;
+  font-size: 13px;
+  cursor: pointer;
+  padding: 0;
+}
+
+.resend-btn:hover {
+  color: #92400e;
+  text-decoration: underline;
+}
+
+/* ── Footnote ─────────────────────────────────── */
+.login-footnote {
+  margin-top: 20px;
+  font-size: 12px;
+  color: #a16207;
+  text-align: center;
+  z-index: 1;
+}
+
+/* ── Register section ────────────────────────── */
+.lm-register {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 1.25rem;
+}
+
+.lm-register p {
+  font-size: 13px;
+  color: #888;
+  margin: 0;
+}
+
+.lm-register-btn {
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  color: #d97706 !important;
+}
+
+/* ── Terms ───────────────────────────────────── */
+.lm-terms {
+  margin-top: 1rem;
+  font-size: 11px;
+  color: #a16207;
+  text-align: center;
+  line-height: 1.6;
+  max-width: 300px;
+}
+
+.lm-terms span {
+  color: #92400e;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* ── Legal modal: professional clause layout ── */
+.legal-body {
+    padding: 20px 20px 40px;
+    max-width: 640px;
+    margin: 0 auto;
+}
+
+.legal-updated {
+    font-size: 13px;
+    color: #8a8f98;
+    margin-bottom: 20px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.legal-clauses {
+    display: flex;
+    flex-direction: column;
+}
+
+.legal-clause {
+    padding: 18px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.legal-clause:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.legal-clause-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 15.5px;
+    font-weight: 600;
+    color: #16181c;
+    margin: 0 0 10px;
+}
+
+.legal-clause-number {
+    flex: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: #fef3c7;
+    color: #92400e;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.legal-clause-content {
+    font-size: 14.5px;
+    line-height: 1.7;
+    color: #3f4148;
+    padding-left: 34px;
+}
+
+.legal-clause-content p {
+    margin: 0 0 10px;
+}
+
+.legal-clause-content p:last-child {
+    margin-bottom: 0;
+}
